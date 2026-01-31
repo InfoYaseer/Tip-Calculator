@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tip Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="wrap">
+    <section class="card" aria-label="Tip Calculator">
+      <header class="card__header">
+        <div class="badge" aria-hidden="true">%</div>
+        <div>
+          <h1 class="title">Tip Calculator</h1>
+          <p class="subtitle">Enter bill and tip to get the final amount instantly.</p>
+        </div>
+      </header>
+
+      <div class="grid">
+        <div class="field">
+          <label class="label" for="bill">Bill Amount</label>
+          <div class="inputbox">
+            <span class="prefix">Rs</span>
+            <input type="number" id="bill" inputmode="decimal" placeholder="0.00" min="0" step="0.01" />
+          </div>
+          <small class="hint">Example: 2500.00</small>
+        </div>
+
+        <div class="field">
+          <label class="label" for="tip">Tip Percentage</label>
+          <div class="inputbox">
+            <span class="prefix">%</span>
+            <input type="number" id="tip" inputmode="numeric" placeholder="Enter tip percentage" min="0" step="1" />
+          </div>
+          <small class="hint">Example: 10</small>
+        </div>
+      </div>
+
+      <button class="btn" id="calculate" type="button">
+        Calculate Total
+      </button>
+
+      <div class="result" aria-live="polite">
+        <div class="result__left">
+          <p class="result__label">Total Amount</p>
+          <p class="result__sub">Bill + Tip</p>
+        </div>
+        <div class="result__right">
+          <span class="currency">Rs</span>
+          <span id="total" class="total">0.00</span>
+        </div>
+      </div>
+
+      <p id="msg" class="msg" role="status"></p>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
